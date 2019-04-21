@@ -20,7 +20,7 @@ sent=re.split("[!\.]\s",text)
 #3)Самое распространенное слово в тексте
 words=text.split(" ")
 words=[x for x in words if len(x)>=4 and "." not in x]
-
+#words=re.findall("\s([А-я0-9]{3}[А-я0-9]+)",text) то же самое
 lst=[]
 max_count=0
 max_word=""
