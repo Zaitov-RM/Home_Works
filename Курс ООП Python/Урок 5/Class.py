@@ -7,7 +7,7 @@
 '''
 
 
-
+#---------------Class Word
 class Word:
       text="Кодить"
       part_speech="Глагол"
