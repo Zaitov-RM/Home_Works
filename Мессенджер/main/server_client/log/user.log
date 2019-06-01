@@ -1,0 +1,38 @@
+2019-05-29 19:03:31,546 - INFO - create_presence-{'status': 'online', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:05:57,467 - INFO - create_presence-{'status': 'online', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:05:57,469 - INFO - create_presence-{'status': 'offlane', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:11:40,008 - INFO - create_presence-{'status': 'online', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:11:40,012 - INFO - create_presence-{'status': 'offlane', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:14:59,948 - INFO - create_presence-{'status': 'online', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:14:59,950 - INFO - create_presence-{'status': 'offlane', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:16:11,262 - INFO - Новый пользователь ruslan
+2019-05-29 19:16:11,311 - INFO - create_presence-{'status': 'online', 'data': '29/05/2019', 'user': 'ruslan'}
+2019-05-29 19:16:11,313 - INFO - create_presence-{'status': 'offlane', 'data': '29/05/2019', 'user': 'ruslan'}
+2019-05-29 19:18:30,993 - INFO - create_presence-{'status': 'online', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:18:30,996 - INFO - create_presence-{'status': 'offlane', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:23:01,998 - INFO - Пользователь admin online
+2019-05-29 19:23:59,540 - INFO - Пользователь admin online
+2019-05-29 19:23:59,552 - INFO - create_presence-{'status': 'online', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:23:59,555 - INFO - create_presence-{'status': 'offlane', 'data': '29/05/2019', 'user': 'admin'}
+2019-06-01 08:33:51,301 - INFO - Пользователь admin online
+2019-06-01 08:38:36,709 - INFO - Пользователь admin online
+2019-06-01 08:42:04,529 - INFO - Пользователь admin online
+2019-06-01 08:42:59,504 - INFO - Пользователь admin online
+2019-06-01 08:42:59,513 - INFO - create_presence-{'status': 'online', 'data': '01/06/2019', 'user': 'admin'}
+2019-06-01 08:42:59,515 - INFO - create_presence-{'status': 'offlane', 'data': '01/06/2019', 'user': 'admin'}
+2019-06-01 08:43:43,264 - INFO - Пользователь admin online
+2019-06-01 08:43:43,272 - INFO - create_presence-{'status': 'online', 'data': '01/06/2019', 'user': 'admin'}
+2019-06-01 08:43:43,273 - INFO - create_presence-{'status': 'offlane', 'data': '01/06/2019', 'user': 'admin'}
+2019-06-01 14:55:16,582 - INFO - Пользователь admin online
+2019-06-01 14:56:06,603 - INFO - Пользователь admin online
+2019-06-01 15:06:06,013 - INFO - Пользователь admin online
+2019-06-01 15:15:25,400 - INFO - Пользователь admin online
+2019-06-01 15:17:36,754 - INFO - Пользователь admin online
+2019-06-01 15:22:06,322 - INFO - Пользователь admin online
+2019-06-01 15:23:56,938 - INFO - Пользователь admin online
+2019-06-01 15:26:20,451 - INFO - Пользователь admin online
+2019-06-01 15:26:20,451 - INFO - Пользователь admin online
+2019-06-01 15:26:20,544 - INFO - create_presence-{'status': 'online', 'data': '01/06/2019', 'user': 'admin'}
+2019-06-01 15:26:20,544 - INFO - create_presence-{'status': 'online', 'data': '01/06/2019', 'user': 'admin'}
+2019-06-01 15:26:20,544 - INFO - create_presence-{'status': 'offlane', 'data': '01/06/2019', 'user': 'admin'}
+2019-06-01 15:26:20,544 - INFO - create_presence-{'status': 'offlane', 'data': '01/06/2019', 'user': 'admin'}
