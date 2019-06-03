@@ -4,11 +4,12 @@ from socket import *
 from utils import*
 import sys
 from datetime import datetime
-
+from server_client.deco import mylog
 import logging
 import log.user_log_config
 logger = logging.getLogger('user')
 
+@mylog
 def create_presence(status,user='Guest'):
       data=datetime.today().strftime('%d/%m/%Y')
       message={
