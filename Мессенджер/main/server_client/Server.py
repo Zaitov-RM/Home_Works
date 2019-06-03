@@ -3,12 +3,14 @@ from socket import*
 from utils import*
 from errors import*
 import sys
+from server_client.deco import mylog
 
 import logging
 import log.server_log_config
 
 logger = logging.getLogger('server')
 
+@mylog
 def presence_response(presence):
       if presence['status']=='online':
             logger.info(f"{presence_response.__name__}-{presence}")
@@ -36,7 +38,7 @@ if __name__=='__main__':
             port=8888
       
       s.bind((host, port))
-      s.listen(1)
+      s.listen(5)
 
       print("Сервер запущен")
       while True:

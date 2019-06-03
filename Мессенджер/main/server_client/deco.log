@@ -1,1 +1,8 @@
-my_func-(10, 11)-{}
+send_msg-(<socket.socket fd=268, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 49695)>, {'responce': 200}, 'ascii')-{}create_presence-('offlane', 'admin')-{}
+send_msg-(<socket.socket fd=244, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49695), raddr=('127.0.0.1', 8888)>, {'status': 'offlane', 'data': '01/06/2019', 'user': 'admin'}, 'ascii')-{}
+create_presence-('online', 'admin')-{}
+send_msg-(<socket.socket fd=272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49372), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '03/06/2019', 'user': 'admin'}, 'ascii')-{}
+presence_response-({'status': 'online', 'data': '03/06/2019', 'user': 'admin'},)-{}
+send_msg-(<socket.socket fd=272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 49372)>, {'responce': 200}, 'ascii')-{}
+create_presence-('offlane', 'admin')-{}
+send_msg-(<socket.socket fd=272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49372), raddr=('127.0.0.1', 8888)>, {'status': 'offlane', 'data': '03/06/2019', 'user': 'admin'}, 'ascii')-{}
