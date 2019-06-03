@@ -1,9 +1,10 @@
 from datetime import datetime
-from server_client.errors import *
+from errors import *
 import json
 import os
 import sys
 sys.path.append('../')
+from server_client.deco import mylog
 
 import logging
 from server_client.log.user_log_config import *
@@ -38,7 +39,7 @@ def get_msg(data, coding):
       '''
       return bytes_to_msg(data,coding)
 #------------------------------------------------------------
-
+@mylog
 def send_msg(adr,msg,coding):
       '''Отправляет сообщение
       '''
