@@ -1,5 +1,6 @@
-2019-06-03 05:19:57,415 - INFO - Server - list index out of range
-2019-06-03 05:19:57,417 - INFO - Server - list index out of range
-2019-06-03 05:20:20,801 - INFO - Server - wrapper-{'status': 'online', 'data': '03/06/2019', 'user': 'admin'}
-2019-06-03 05:21:36,959 - INFO - Server - list index out of range
-2019-06-03 05:21:36,965 - INFO - Server - list index out of range
+2019-06-06 09:16:47,967 - INFO - Server - list index out of range
+2019-06-06 09:16:47,969 - INFO - Server - list index out of range
+2019-06-06 09:16:53,989 - INFO - Server - wrapper-{'status': 'online', 'data': '06/06/2019', 'user': 'name'}
+2019-06-06 09:17:23,928 - INFO - Server - list index out of range
+2019-06-06 09:17:23,929 - INFO - Server - list index out of range
+2019-06-06 09:17:28,354 - INFO - Server - wrapper-{'status': 'online', 'data': '06/06/2019', 'user': 'name'}
