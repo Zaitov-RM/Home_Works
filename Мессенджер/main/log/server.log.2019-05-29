@@ -1,0 +1,16 @@
+2019-05-29 19:01:03,699 - INFO - Server - list index out of range
+2019-05-29 19:01:03,708 - INFO - Server - list index out of range
+2019-05-29 19:03:09,460 - INFO - Server - list index out of range
+2019-05-29 19:03:09,460 - INFO - Server - list index out of range
+2019-05-29 19:05:44,823 - INFO - Server - list index out of range
+2019-05-29 19:05:44,824 - INFO - Server - list index out of range
+2019-05-29 19:05:57,468 - INFO - Server - presence_response-{'status': 'online', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:11:40,009 - INFO - Server - presence_response-{'status': 'online', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:14:41,919 - INFO - Server - list index out of range
+2019-05-29 19:14:41,920 - INFO - Server - list index out of range
+2019-05-29 19:14:59,949 - INFO - Server - presence_response-{'status': 'online', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:16:11,312 - INFO - Server - presence_response-{'status': 'online', 'data': '29/05/2019', 'user': 'ruslan'}
+2019-05-29 19:18:30,994 - INFO - Server - presence_response-{'status': 'online', 'data': '29/05/2019', 'user': 'admin'}
+2019-05-29 19:23:41,242 - INFO - Server - list index out of range
+2019-05-29 19:23:41,243 - INFO - Server - list index out of range
+2019-05-29 19:23:59,553 - INFO - Server - presence_response-{'status': 'online', 'data': '29/05/2019', 'user': 'admin'}

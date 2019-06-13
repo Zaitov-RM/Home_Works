@@ -1,0 +1,4 @@
+2019-06-10 20:06:08,523 - INFO - Server - list index out of range
+2019-06-10 20:06:08,559 - INFO - Server - list index out of range
+2019-06-10 20:06:09,016 - INFO - Server - wrapper-{'status': 'online', 'data': '10/06/2019', 'user': 'User1'}
+2019-06-10 20:06:09,026 - INFO - Server - wrapper-{'status': 'online', 'data': '10/06/2019', 'user': 'User0'}

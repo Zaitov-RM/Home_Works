@@ -1,0 +1,98 @@
+2019-06-09 10:31:01,968 - INFO - Server - list index out of range
+2019-06-09 10:31:01,971 - INFO - Server - list index out of range
+2019-06-09 10:31:02,755 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:31:02,757 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:31:32,186 - INFO - Server - list index out of range
+2019-06-09 10:31:32,187 - INFO - Server - list index out of range
+2019-06-09 10:31:33,147 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:31:33,167 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:35:03,164 - INFO - Server - list index out of range
+2019-06-09 10:35:03,165 - INFO - Server - list index out of range
+2019-06-09 10:35:04,148 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:35:04,162 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:38:36,774 - INFO - Server - list index out of range
+2019-06-09 10:38:36,774 - INFO - Server - list index out of range
+2019-06-09 10:38:37,783 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:38:37,789 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:51:01,800 - INFO - Server - list index out of range
+2019-06-09 10:51:01,800 - INFO - Server - list index out of range
+2019-06-09 10:51:02,800 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:51:02,804 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:51:56,352 - INFO - Server - list index out of range
+2019-06-09 10:51:56,352 - INFO - Server - list index out of range
+2019-06-09 10:51:57,297 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:51:57,300 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:52:39,006 - INFO - Server - list index out of range
+2019-06-09 10:52:39,007 - INFO - Server - list index out of range
+2019-06-09 10:52:40,026 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:52:40,035 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:53:21,629 - INFO - Server - list index out of range
+2019-06-09 10:53:21,630 - INFO - Server - list index out of range
+2019-06-09 10:53:22,688 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:53:22,697 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:54:30,260 - INFO - Server - list index out of range
+2019-06-09 10:54:30,260 - INFO - Server - list index out of range
+2019-06-09 10:54:31,373 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 10:54:31,430 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'Guest'}
+2019-06-09 11:06:57,002 - INFO - Server - list index out of range
+2019-06-09 11:06:57,002 - INFO - Server - list index out of range
+2019-06-09 11:07:32,348 - INFO - Server - list index out of range
+2019-06-09 11:07:32,348 - INFO - Server - list index out of range
+2019-06-09 11:07:33,374 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 11:07:33,397 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 11:12:27,151 - INFO - Server - list index out of range
+2019-06-09 11:12:27,151 - INFO - Server - list index out of range
+2019-06-09 11:12:28,088 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 11:12:28,107 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 11:13:26,283 - INFO - Server - list index out of range
+2019-06-09 11:13:26,283 - INFO - Server - list index out of range
+2019-06-09 11:13:27,282 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 11:13:27,296 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 11:22:54,316 - INFO - Server - list index out of range
+2019-06-09 11:22:54,316 - INFO - Server - list index out of range
+2019-06-09 11:22:55,457 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 11:22:55,577 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 11:34:03,365 - INFO - Server - list index out of range
+2019-06-09 11:34:03,365 - INFO - Server - list index out of range
+2019-06-09 11:34:04,356 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 11:34:04,374 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 11:39:10,224 - INFO - Server - list index out of range
+2019-06-09 11:39:10,224 - INFO - Server - list index out of range
+2019-06-09 11:39:11,247 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 11:39:11,269 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 11:54:14,382 - INFO - Server - list index out of range
+2019-06-09 11:54:14,382 - INFO - Server - list index out of range
+2019-06-09 11:54:15,382 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 11:54:15,413 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 11:57:58,289 - INFO - Server - list index out of range
+2019-06-09 11:57:58,289 - INFO - Server - list index out of range
+2019-06-09 11:57:59,238 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 11:57:59,247 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 12:05:13,635 - INFO - Server - list index out of range
+2019-06-09 12:05:13,635 - INFO - Server - list index out of range
+2019-06-09 12:05:14,706 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 12:05:14,709 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 12:10:55,518 - INFO - Server - list index out of range
+2019-06-09 12:10:55,519 - INFO - Server - list index out of range
+2019-06-09 12:10:56,554 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 12:10:56,565 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 12:13:22,512 - INFO - Server - list index out of range
+2019-06-09 12:13:22,512 - INFO - Server - list index out of range
+2019-06-09 12:13:23,451 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 12:13:23,453 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 12:17:53,882 - INFO - Server - list index out of range
+2019-06-09 12:17:53,883 - INFO - Server - list index out of range
+2019-06-09 12:17:54,823 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 12:17:54,836 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 12:19:40,131 - INFO - Server - list index out of range
+2019-06-09 12:19:40,132 - INFO - Server - list index out of range
+2019-06-09 12:19:41,132 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 12:19:41,135 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 12:22:40,062 - INFO - Server - list index out of range
+2019-06-09 12:22:40,062 - INFO - Server - list index out of range
+2019-06-09 12:22:41,046 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
+2019-06-09 12:22:41,076 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 12:23:56,669 - INFO - Server - list index out of range
+2019-06-09 12:23:56,670 - INFO - Server - list index out of range
+2019-06-09 12:23:57,698 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User1'}
+2019-06-09 12:23:57,701 - INFO - Server - wrapper-{'status': 'online', 'data': '09/06/2019', 'user': 'User0'}
