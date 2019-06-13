@@ -1,4 +1,21 @@
 #Client
+"""Добавить в начало
+      print("Вы зарегистрированы?  y/n")
+      answer=input()
+      if answer.upper()=='Y':
+            print("name: ")
+            name=str(input())
+            print("password")
+            password=str(input())
+            log_in(name,password)
+
+      else:
+            print("name: ")
+            name=str(input())
+            print("password")
+            password=str(input())
+            check_in(name,password)
+"""
 
 from socket import *
 from utils import*
@@ -22,23 +39,6 @@ def create_presence(status,user='Guest'):
             
 
 if __name__=='__main__':
-      print("Вы зарегистрированы?  y/n")
-      answer=input()
-      if answer.upper()=='Y':
-            print("name: ")
-            name=str(input())
-            print("password")
-            password=str(input())
-            log_in(name,password)
-
-      else:
-            print("name: ")
-            name=str(input())
-            print("password")
-            password=str(input())
-            check_in(name,password)
-
-
       s=socket(AF_INET,SOCK_STREAM)
       
       try:
@@ -53,14 +53,14 @@ if __name__=='__main__':
 
       s.connect((host,port))      
       
-      send_msg(s,create_presence("online",name),'ascii')
+      send_msg(s,create_presence("online",'name'),'ascii')
 
       responce=get_msg(s.recv(1024),'ascii')
       print(responce)
       
-      print(name)
-      send_msg(s,create_presence("offlane",name),'ascii')
-      user_off(name)
+#      print(name)
+      send_msg(s,create_presence("offlane",'name'),'ascii')
+#      user_off(name)
       s.close()
 
 
