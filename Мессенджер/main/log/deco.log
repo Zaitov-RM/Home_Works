@@ -361,3 +361,276 @@ presence_response-({'status': 'online', 'data': '10/06/2019', 'user': 'User1'},)
 send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 49456)>, {'responce': 200}, 'utf-8')-{}
 presence_response-({'status': 'online', 'data': '10/06/2019', 'user': 'User0'},)-{}
 send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 49457)>, {'responce': 200}, 'utf-8')-{}
+create_presence-('online',)-{}
+create_presence-('online',)-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53565), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '16/06/2019', 'user': 'Guest'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53566), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '16/06/2019', 'user': 'Guest'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '16/06/2019', 'user': 'Guest'},)-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53565)>, {'responce': 200}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '16/06/2019', 'user': 'Guest'},)-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53566)>, {'responce': 200}, 'utf-8')-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53566), raddr=('127.0.0.1', 8888)>, {'Time': 1560693164.2781422, 'To': 'all', 'From': 'Guest', 'Text': 'sdsdf'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53565)>, {'Time': 1560693164.2781422, 'To': 'all', 'From': 'Guest', 'Text': 'sdsdf'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53566)>, {'Time': 1560693164.2781422, 'To': 'all', 'From': 'Guest', 'Text': 'sdsdf'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53566), raddr=('127.0.0.1', 8888)>, {'Time': 1560693171.6495638, 'To': 'all', 'From': 'Guest', 'Text': 'fdgdfg'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53565)>, {'Time': 1560693171.6495638, 'To': 'all', 'From': 'Guest', 'Text': 'fdgdfg'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53566)>, {'Time': 1560693171.6495638, 'To': 'all', 'From': 'Guest', 'Text': 'fdgdfg'}, 'utf-8')-{}
+create_presence-('online', 'User3')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53573), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '16/06/2019', 'user': 'User3'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '16/06/2019', 'user': 'User3'},)-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53573)>, {'responce': 200}, 'utf-8')-{}
+create_presence-('online', 'User1')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53574), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '16/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '16/06/2019', 'user': 'User1'},)-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53574)>, {'responce': 200}, 'utf-8')-{}
+create_presence-('online', 'User0')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53575), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '16/06/2019', 'user': 'User0'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '16/06/2019', 'user': 'User0'},)-{}
+send_msg-(<socket.socket fd=352, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53575)>, {'responce': 200}, 'utf-8')-{}
+create_presence-('online', 'User2')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53577), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '16/06/2019', 'user': 'User2'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '16/06/2019', 'user': 'User2'},)-{}
+send_msg-(<socket.socket fd=356, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53577)>, {'responce': 200}, 'utf-8')-{}
+create_presence-('online',)-{}
+create_presence-('online',)-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53581), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '16/06/2019', 'user': 'Guest'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '16/06/2019', 'user': 'Guest'},)-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53582), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '16/06/2019', 'user': 'Guest'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53581)>, {'responce': 200}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '16/06/2019', 'user': 'Guest'},)-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53582)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x0295F710>, 'online', 'User1')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User1'},)-{}
+send_msg-(<socket.socket fd=416, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50179), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User1'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=364, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50179)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02B4F6F0>, 'online', 'User1')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User1'},)-{}
+send_msg-(<socket.socket fd=352, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50186)>, {'responce': 200}, 'utf-8')-{}
+send_msg-(<socket.socket fd=416, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50186), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-('online',)-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50191), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'Guest'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'Guest'},)-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50191)>, {'responce': 200}, 'utf-8')-{}
+create_presence-('online',)-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50192), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'Guest'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'Guest'},)-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50192)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x010139D0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50197), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User1'},)-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50197)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x00FD39D0>, 'online', 'User0')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User0'},)-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50198)>, {'responce': 200}, 'utf-8')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50198), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User0'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x00EB39D0>, 'online', 'User0')-{}
+create_presence-(<__main__.Client object at 0x00FF39D0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50209), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User0'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User0'},)-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50210), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User1'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50209)>, {'responce': 200}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User1'},)-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50210)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x00FF39B0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50213), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User1'},)-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50213)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x00FA39B0>, 'online', 'User0')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50214), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User0'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User0'},)-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50214)>, {'responce': 200}, 'utf-8')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50214), raddr=('127.0.0.1', 8888)>, {'Time': 1560961346.1328073, 'To': 'User1', 'From': 'User0', 'Text': 'sdfsf'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50213)>, {'Time': 1560961346.1328073, 'To': 'User1', 'From': 'User0', 'Text': 'sdfsf'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50213), raddr=('127.0.0.1', 8888)>, {'Time': 1560961357.758472, 'To': 'User0', 'From': 'User1', 'Text': 'sdfsf'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50214)>, {'Time': 1560961357.758472, 'To': 'User0', 'From': 'User1', 'Text': 'sdfsf'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50213), raddr=('127.0.0.1', 8888)>, {'Time': 1560961361.1626668, 'To': 'User0', 'From': 'User1', 'Text': 'df'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50214)>, {'Time': 1560961361.1626668, 'To': 'User0', 'From': 'User1', 'Text': 'df'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50214), raddr=('127.0.0.1', 8888)>, {'Time': 1560961367.8230476, 'To': 'User1', 'From': 'User0', 'Text': 'sdfsdf'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50213)>, {'Time': 1560961367.8230476, 'To': 'User1', 'From': 'User0', 'Text': 'sdfsdf'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50214), raddr=('127.0.0.1', 8888)>, {'Time': 1560961372.1252937, 'To': 'User1', 'From': 'User0', 'Text': 'HI'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50213)>, {'Time': 1560961372.1252937, 'To': 'User1', 'From': 'User0', 'Text': 'HI'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50213), raddr=('127.0.0.1', 8888)>, {'Time': 1560961376.3035328, 'To': 'User0', 'From': 'User1', 'Text': 'Hi'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50214)>, {'Time': 1560961376.3035328, 'To': 'User0', 'From': 'User1', 'Text': 'Hi'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50213), raddr=('127.0.0.1', 8888)>, {'Time': 1560961382.2208712, 'To': 'User0', 'From': 'User1', 'Text': 'Whats up'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=340, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50214)>, {'Time': 1560961382.2208712, 'To': 'User0', 'From': 'User1', 'Text': 'Whats up'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x0295E7D0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 50491), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User1'},)-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 50491)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x01D03AB0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=304, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 51063), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User1'},)-{}
+send_msg-(<socket.socket fd=196, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 51063)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x01313AD0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=304, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 51076), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User1'},)-{}
+send_msg-(<socket.socket fd=244, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 51076)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x01323AD0>, 'online', 'User1')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User1'},)-{}
+TREAM, proto=0, laddr=('127.0.0.1', 51077), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User1'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=332, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 51077)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x00633AB0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=304, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 51078), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User1'},)-{}
+send_msg-(<socket.socket fd=196, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 51078)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x01323AB0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=304, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 51080), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '19/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-({'status': 'online', 'data': '19/06/2019', 'user': 'User1'},)-{}
+send_msg-(<socket.socket fd=244, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 51080)>, {'responce': 200}, 'utf-8')-{}
+create_presence-('online',)-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54125), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'Guest'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54126), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'Guest'}, 'utf-8')-{}
+create_presence-('online',)-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54142), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'Guest'}, 'utf-8')-{}
+create_presence-('online',)-{}
+send_msg-(<socket.socket fd=264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54143), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'Guest'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x0253F7F0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54816), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x027185B0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54841), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02507670>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54855), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02509570>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54859), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02508590>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=448, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54888), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x025A85B0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 55113), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x027A9570>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=416, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 55119), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x027E9570>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=416, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 55134), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x025A9570>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=416, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 55146), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02010530>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=312, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 55338), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '22/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02EE5CB0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=448, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58303), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02EE5830>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58326), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F44390>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58339), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F65590>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58339)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F44390>, 'get_contacts', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58339), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F44750>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58352), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02634130>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58352)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F44750>, 'get_contacts', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58352), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02634130>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58352)>, {'responce': 202, 'alert': []}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F45710>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58362), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F56570>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58362)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F45710>, 'get_contacts', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58362), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F56570>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58362)>, {'responce': 202, 'alert': []}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F25870>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58383), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F434F0>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58383)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F25870>, 'get_contacts', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58383), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F434F0>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58383)>, {'responce': 202, 'alert': []}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F05CB0>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58524), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02EF4450>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58524)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F05CB0>, 'get_contacts', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58524), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02EF4450>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58524)>, {'responce': 202, 'alert': []}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F75630>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58550), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F30610>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=476, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58550)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F75630>, 'get_contacts', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58550), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F30610>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=476, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58550)>, {'responce': 202, 'alert': []}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F45890>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58563), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F64A90>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=448, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58563)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F45890>, 'get_contacts', 'User1')-{}
+send_msg-(<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58563), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F64A90>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=448, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58563)>, {'responce': 202, 'alert': ['client2', 'client2', 'client2', 'client2', 'client2', 'client2', 'client3', 'client3', 'client3', 'client3']}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F58830>, 'online', 'User1')-{}
+send_msg-(<socket.socket fd=436, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58781), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F64A90>, {'status': 'online', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=492, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58781)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F58830>, 'get_contacts', 'User1')-{}
+send_msg-(<socket.socket fd=436, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58781), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F64A90>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'User1'})-{}
+send_msg-(<socket.socket fd=492, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58781)>, {'responce': 202, 'alert': ['client2', 'client2', 'client2', 'client2', 'client2', 'client2', 'client3', 'client3', 'client3', 'client3']}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F05B10>, 'online', 'client1')-{}
+send_msg-(<socket.socket fd=236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58793), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F04AB0>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58793)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F05B10>, 'get_contacts', 'client1')-{}
+send_msg-(<socket.socket fd=236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58793), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02F04AB0>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58793)>, {'responce': 202, 'alert': ['client2', 'client2', 'client2', 'client2', 'client2', 'client2', 'client3', 'client3', 'client3', 'client3']}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02EF8570>, 'online', 'client1')-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59181), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x0294BE30>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59181)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02EF8570>, 'get_contacts', 'client1')-{}
+send_msg-(<socket.socket fd=260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59181), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x0294BE30>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59181)>, {'responce': 202, 'alert': ['client2', 'client2', 'client2', 'client2', 'client2', 'client2', 'client3', 'client3', 'client3', 'client3']}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F256D0>, 'online', 'client1')-{}
+send_msg-(<socket.socket fd=236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59226), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02949810>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59226)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F256D0>, 'get_contacts', 'client1')-{}
+send_msg-(<socket.socket fd=236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59226), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x02949810>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59226)>, {'responce': 202, 'alert': ['client2', 'client2', 'client2', 'client2', 'client2', 'client2', 'client3', 'client3', 'client3', 'client3']}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F15830>, 'online', 'client1')-{}
+presence_response-(<__main__.Server object at 0x0294ADF0>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59235)>, {'responce': 200}, 'utf-8')-{}
+send_msg-(<socket.socket fd=236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59235), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F15830>, 'get_contacts', 'client1')-{}
+presence_response-(<__main__.Server object at 0x0294ADF0>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59235)>, {'responce': 202, 'alert': ['client2', 'client2', 'client2', 'client2', 'client2', 'client2', 'client3', 'client3', 'client3', 'client3']}, 'utf-8')-{}
+send_msg-(<socket.socket fd=236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59235), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F076B0>, 'online', 'client1')-{}
+presence_response-(<__main__.Server object at 0x0294ADF0>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=252, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59241), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+send_msg-(<socket.socket fd=364, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59241)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F076B0>, 'get_contacts', 'client1')-{}
+send_msg-(<socket.socket fd=252, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59241), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x0294ADF0>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=364, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59241)>, {'responce': 202, 'alert': ['client2', 'client2', 'client2', 'client2', 'client2', 'client2', 'client3', 'client3', 'client3', 'client3']}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F25630>, 'online', 'client1')-{}
+send_msg-(<socket.socket fd=236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59247), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x0294ADF0>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=196, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59247)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02F25630>, 'get_contacts', 'client1')-{}
+send_msg-(<socket.socket fd=236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59247), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x0294ADF0>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=196, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59247)>, {'responce': 202, 'alert': ['client2', 'client2', 'client2', 'client2', 'client2', 'client2', 'client3', 'client3', 'client3', 'client3']}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02FF5870>, 'online', 'client1')-{}
+presence_response-(<__main__.Server object at 0x0292ADF0>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59275)>, {'responce': 200}, 'utf-8')-{}
+send_msg-(<socket.socket fd=456, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59275), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x02FF5870>, 'get_contacts', 'client1')-{}
+presence_response-(<__main__.Server object at 0x0292ADF0>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59275)>, {'responce': 202, 'alert': ['client2', 'client2', 'client2', 'client2', 'client2', 'client2', 'client3', 'client3', 'client3', 'client3']}, 'utf-8')-{}
+send_msg-(<socket.socket fd=456, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59275), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x030056F0>, 'online', 'client1')-{}
+send_msg-(<socket.socket fd=416, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59286), raddr=('127.0.0.1', 8888)>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x0292ADF0>, {'status': 'online', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=196, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59286)>, {'responce': 200}, 'utf-8')-{}
+create_presence-(<__main__.Client object at 0x030056F0>, 'get_contacts', 'client1')-{}
+send_msg-(<socket.socket fd=416, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59286), raddr=('127.0.0.1', 8888)>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'}, 'utf-8')-{}
+presence_response-(<__main__.Server object at 0x0292ADF0>, {'status': 'get_contacts', 'data': '30/06/2019', 'user': 'client1'})-{}
+send_msg-(<socket.socket fd=196, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 59286)>, {'responce': 202, 'alert': ['client2', 'client2', 'client2', 'client2', 'client2', 'client2', 'client3', 'client3', 'client3', 'client3']}, 'utf-8')-{}
