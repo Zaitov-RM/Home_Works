@@ -49,8 +49,31 @@ def _fmt_size(n: float) -> str:
     return f"{n:.1f} ТБ"
 
 
-def _progress_hook(d: dict) -> None:
-    """Отображает прогресс загрузки отдельного потока (видео или аудио)."""
+def _progress_hook(d: dict, ui_callback=None) -> None:
+    """Отображает прогресс загрузки отдельного потока (видео или аудио).
+
+    Если передан ui_callback — вместо печати в терминал отправляет структурированные
+    события в GUI-оболочку (см. youtube_gui.py).
+    """
+    if ui_callback is not None:
+        info = d.get("info_dict") or {}
+        vcodec = info.get("vcodec") or "none"
+        payload = {
+            "type": "progress",
+            "status": d.get("status"),
+            "label": "аудио" if vcodec == "none" else "видео",
+            "format_id": info.get("format_id") or "?",
+            "downloaded_bytes": d.get("downloaded_bytes") or 0,
+            "total_bytes": d.get("total_bytes") or d.get("total_bytes_estimate") or 0,
+            "speed": d.get("speed") or 0,
+            "eta": d.get("eta"),
+            "filename": d.get("filename") or "",
+        }
+        if d.get("status") == "finished":
+            payload["type"] = "thread_finished"
+        ui_callback(payload)
+        return
+
     info = d.get("info_dict") or {}
     fid = info.get("format_id") or "?"
     vcodec = (info.get("vcodec") or "none")
@@ -84,7 +107,16 @@ def _progress_hook(d: dict) -> None:
         sys.stdout.flush()
 
 
-def _postprocessor_hook(d: dict) -> None:
+def _postprocessor_hook(d: dict, ui_callback=None) -> None:
+    pp = (d.get("postprocessor") or "").lower()
+    if ui_callback is not None:
+        kind = "merge" if ("mergearbvr" in pp or "ffmpegmerge" in pp) else \
+               "audio" if "ffmpegextractaudio" in pp else None
+        if kind:
+            ui_callback({"type": "postprocess", "kind": kind,
+                         "status": d.get("status"),
+                         "filename": d.get("info_dict", {}).get("filepath", "")})
+        return
     if d["status"] == "started":
         pp = (d.get("postprocessor") or "").lower()
         if "mergearbvr" in pp or "ffmpegmerge" in pp:
@@ -112,14 +144,20 @@ QUALITY_MAP = {
 }
 
 
-def build_ydl_opts(args: argparse.Namespace) -> dict:
+def build_ydl_opts(args: argparse.Namespace, ui_callback=None) -> dict:
     outdir = Path(args.output).expanduser()
     outdir.mkdir(parents=True, exist_ok=True)
 
+    def _ph(d):
+        _progress_hook(d, ui_callback=ui_callback)
+
+    def _pph(d):
+        _postprocessor_hook(d, ui_callback=ui_callback)
+
     opts: dict = {
         "outtmpl": str(outdir / "%(title)s [%(id)s].%(ext)s"),
-        "progress_hooks": [_progress_hook],
-        "postprocessor_hooks": [_postprocessor_hook],
+        "progress_hooks": [_ph],
+        "postprocessor_hooks": [_pph],
         "ignoreerrors": args.playlist,          # не падать на недоступных видео плейлиста
         "noplaylist": not args.playlist,        # по умолчанию брать только одно видео
         "quiet": True,
@@ -139,7 +177,11 @@ def build_ydl_opts(args: argparse.Namespace) -> dict:
 
     if args.audio_only:
         if shutil.which("ffmpeg") is None:
-            sys.exit("Для --audio-only нужен ffmpeg. Установите его и повторите попытку.")
+            msg = "Для скачивания MP3 нужен ffmpeg. Установите его: winget install Gyan.FFmpeg"
+            if ui_callback is not None:
+                ui_callback({"type": "error", "message": msg})
+                raise RuntimeError(msg)
+            sys.exit(msg)
         opts["format"] = "bestaudio/best"
         opts["postprocessors"] = [
             {
@@ -196,36 +238,87 @@ def list_formats(url: str, opts: dict | None = None) -> None:
 
 
 def download(urls: list[str], args: argparse.Namespace) -> int:
-    opts = build_ydl_opts(args)
+    """CLI-точка входа: делегирует общей функции download_core."""
+    n_failed = download_core(
+        urls,
+        output=args.output,
+        quality=args.quality,
+        audio_only=args.audio_only,
+        audio_bitrate=args.audio_bitrate,
+        playlist=args.playlist,
+        subs=args.subs,
+        subs_langs=args.subs_langs,
+        cookies=getattr(args, "cookies", None),
+        cookies_from_browser=getattr(args, "cookies_from_browser", None),
+        ui_callback=None,
+    )
+    return 1 if n_failed else 0
+
+
+def download_core(urls, *, output="./downloads", quality="best", audio_only=False,
+                  audio_bitrate="192", playlist=False, subs=False, subs_langs="ru,en",
+                  cookies=None, cookies_from_browser=None, ui_callback=None) -> int:
+    """Общая логика скачивания — используется и CLI, и GUI-оболочкой.
+
+    ui_callback: необязательная функция, принимающая dict-события
+    (progress / thread_finished / postprocess / info / error / done).
+    Возвращает число неуспешных ссылок.
+    """
+    args = argparse.Namespace(
+        output=output, quality=quality, audio_only=audio_only,
+        audio_bitrate=audio_bitrate, playlist=playlist, subs=subs,
+        subs_langs=subs_langs, cookies=cookies,
+        cookies_from_browser=cookies_from_browser, list_formats=False,
+    )
+    opts = build_ydl_opts(args, ui_callback=ui_callback)
+    emit = ui_callback or (lambda e: None)
     failed: list[str] = []
 
     with yt_dlp.YoutubeDL(opts) as ydl:
         for i, url in enumerate(urls, 1):
             if len(urls) > 1:
-                print(f"\n=== [{i}/{len(urls)}] {url} ===")
+                msg = f"[{i}/{len(urls)}] {url}"
+                print(f"\n=== {msg} ===") if ui_callback is None else emit({"type": "info", "message": msg})
             try:
                 ydl.download([url])
+                emit({"type": "info", "message": f"✔ Готово: {url}"})
+                if ui_callback is None:
+                    print("\033[32m✔ Готово!\033[0m")
             except yt_dlp.utils.DownloadError as e:
-                print(f"\033[31m✖ Ошибка при скачивании {url}:\033[0m {e}", file=sys.stderr)
-                if "503" in str(e):
-                    print(
-                        "\033[33mПодсказка: HTTP 503 — YouTube временно ограничил этот IP/поток.\n"
-                        "  1) Обновите yt-dlp:  pip install -U yt-dlp\n"
-                        "  2) Подождите несколько минут и повторите попытку;\n"
-                        "  3) Попробуйте другое качество:  -q 720p (или -q 480p);\n"
-                        "  4) Смените сеть (например, мобильный интернет/VPN);\n"
-                        "  5) Если не помогает — добавьте --cookies-from-browser chrome\033[0m",
-                        file=sys.stderr,
-                    )
+                text = str(e)
+                if ui_callback is None:
+                    print(f"\033[31m✖ Ошибка при скачивании {url}:\033[0m {text}", file=sys.stderr)
+                    if "503" in text:
+                        print(
+                            "\033[33mПодсказка: HTTP 503 — YouTube временно ограничил этот IP/поток.\n"
+                            "  1) Обновите yt-dlp:  pip install -U yt-dlp\n"
+                            "  2) Подождите несколько минут и повторите попытку;\n"
+                            "  3) Попробуйте другое качество:  -q 720p (или -q 480p);\n"
+                            "  4) Смените сеть (например, мобильный интернет/VPN);\n"
+                            "  5) Если не помогает — добавьте --cookies-from-browser chrome\033[0m",
+                            file=sys.stderr,
+                        )
+                else:
+                    hint = ""
+                    if "503" in text:
+                        hint = ("\nПодсказка: HTTP 503 — YouTube временно ограничил выдачу. "
+                                "Обновите yt-dlp (pip install -U yt-dlp), подождите несколько "
+                                "минут или попробуйте качество 720p/480p.")
+                    emit({"type": "error", "message": f"✖ {url}\n{text}{hint}"})
                 failed.append(url)
 
-    if failed:
-        print(f"\n\033[31mНе удалось скачать {len(failed)} из {len(urls)}:\033[0m")
-        for u in failed:
-            print("  -", u)
-        return 1
-    print(f"\n\033[32mВсе загрузки завершены. Файлы сохранены в: {Path(args.output).expanduser().resolve()}\033[0m")
-    return 0
+    n_ok = len(urls) - len(failed)
+    if ui_callback is None:
+        if failed:
+            print(f"\n\033[31mНе удалось скачать {len(failed)} из {len(urls)}:\033[0m")
+            for u in failed:
+                print("  -", u)
+        else:
+            print(f"\n\033[32mВсе загрузки завершены. Файлы сохранены в: {Path(args.output).expanduser().resolve()}\033[0m")
+    else:
+        emit({"type": "done", "ok": n_ok, "failed": len(failed),
+              "outdir": str(Path(args.output).expanduser().resolve())})
+    return len(failed)
 
 
 # ---------------------------------------------------------------------------
