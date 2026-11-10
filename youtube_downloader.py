@@ -41,8 +41,22 @@ except ImportError:
 # Прогресс-бар
 # ---------------------------------------------------------------------------
 
+def _fmt_size(n: float) -> str:
+    for unit in ("Б", "КБ", "МБ", "ГБ"):
+        if n < 1024:
+            return f"{n:.1f} {unit}"
+        n /= 1024
+    return f"{n:.1f} ТБ"
+
+
 def _progress_hook(d: dict) -> None:
-    """Отображает прогресс загрузки в консоли."""
+    """Отображает прогресс загрузки отдельного потока (видео или аудио)."""
+    info = d.get("info_dict") or {}
+    fid = info.get("format_id") or "?"
+    vcodec = (info.get("vcodec") or "none")
+    label = "аудио" if vcodec == "none" else "видео"
+    prefix = f"[{label} {fid}] "
+
     if d["status"] == "downloading":
         downloaded = d.get("downloaded_bytes") or 0
         total = d.get("total_bytes") or d.get("total_bytes_estimate") or 0
@@ -51,22 +65,36 @@ def _progress_hook(d: dict) -> None:
 
         if total:
             percent = downloaded / total * 100
-            bar_len = 30
+            bar_len = 24
             filled = int(bar_len * percent // 100)
             bar = "#" * filled + "-" * (bar_len - filled)
             speed_str = f"{speed / 1024 / 1024:.2f} МБ/с" if speed else "--"
             eta_str = f"{eta} c" if eta is not None else "--"
             sys.stdout.write(
-                f"\r[{bar}] {percent:5.1f}% | {speed_str:>10} | ETA: {eta_str:>6} "
+                f"\r{prefix}[{bar}] {percent:5.1f}% | {speed_str:>9} | ETA: {eta_str:>6} "
             )
-            sys.stdout.flush()
+        else:
+            sys.stdout.write(f"\r{prefix}{_fmt_size(downloaded)} ...")
+        sys.stdout.flush()
     elif d["status"] == "finished":
-        sys.stdout.write("\n\033[32m✔ Загрузка завершена.\033[0m Обработка...\n")
+        total = d.get("total_bytes") or 0
+        sys.stdout.write(
+            f"\r{prefix}загружено {_fmt_size(total)}" + " " * 20 + "\n"
+        )
+        sys.stdout.flush()
 
 
 def _postprocessor_hook(d: dict) -> None:
-    if d["status"] == "finished":
-        print("\033[32m✔ Готово!\033[0m")
+    if d["status"] == "started":
+        pp = (d.get("postprocessor") or "").lower()
+        if "mergearbvr" in pp or "ffmpegmerge" in pp:
+            print("\033[32m✔ Потоки загружены. Склейка видео + аудио (ffmpeg)...\033[0m")
+    elif d["status"] == "finished":
+        pp = (d.get("postprocessor") or "").lower()
+        if "mergearbvr" in pp or "ffmpegmerge" in pp:
+            print("\033[32m✔ Склейка завершена — файл готов (со звуком).\033[0m")
+        elif "moviedetailsbyfilename" in pp:
+            print("\033[32m✔ Готово!\033[0m")
 
 
 # ---------------------------------------------------------------------------
@@ -112,8 +140,23 @@ def build_ydl_opts(args: argparse.Namespace) -> dict:
             {"key": "FFmpegMetadata"},
         ]
     else:
-        opts["format"] = QUALITY_MAP.get(args.quality, QUALITY_MAP["best"])
-        opts["merge_output_format"] = "mp4"
+        has_ffmpeg = shutil.which("ffmpeg") is not None
+        if not has_ffmpeg and args.quality in ("best", "2160p", "1440p", "1080p"):
+            # Без ffmpeg склейка видео+аудио невозможна — иначе получится файл без звука.
+            # Берём «прогрессивные» форматы (видео и аудио в одном файле), они доступны до 720p.
+            print(
+                "\033[33mВнимание: ffmpeg не найден. Скачиваю прогрессивный формат "
+                "(до 720p, со звуком, без склейки).\n"
+                "Для качества 1080p+ установите ffmpeg: winget install Gyan.FFmpeg\033[0m",
+                file=sys.stderr,
+            )
+            opts["format"] = (
+                "best[height<=720][acodec!=none][vcodec!=none]/"
+                "bestvideo[height<=720]+bestaudio/best[height<=720]"
+            )
+        else:
+            opts["format"] = QUALITY_MAP.get(args.quality, QUALITY_MAP["best"])
+            opts["merge_output_format"] = "mp4"
 
     if args.subs:
         opts["writesubtitles"] = True
@@ -200,10 +243,6 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
-
-    if shutil.which("ffmpeg") is None and not args.audio_only and args.quality != "best":
-        print("Внимание: ffmpeg не найден — объединение видео и аудио может не сработать.",
-              file=sys.stderr)
 
     if args.list_formats:
         list_formats(args.urls[0], build_ydl_opts(args))
