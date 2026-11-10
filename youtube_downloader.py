@@ -125,6 +125,16 @@ def build_ydl_opts(args: argparse.Namespace) -> dict:
         "quiet": True,
         "no_warnings": True,
         "restrictfilenames": False,
+        # --- Защита от HTTP 503 со стороны YouTube -------------------------
+        # Свежая версия yt-dlp решает «проблемы» (nsig/попадание на rate-limited
+        # серверы) и корректно подбирает клиент. Это главное средство от 503.
+        "extractor_args": {"youtube": {"player_client": ["default", "web"]}},
+        # Если всё же поток вернёт 503 — yt-dlp сам переключится на другой
+        # сервер/поток вместо мгновенного падения.
+        "retries": 10,
+        "fragment_retries": 10,
+        "file_access_retries": 3,
+        "sleep_interval_requests": 1,
     }
 
     if args.audio_only:
@@ -197,6 +207,16 @@ def download(urls: list[str], args: argparse.Namespace) -> int:
                 ydl.download([url])
             except yt_dlp.utils.DownloadError as e:
                 print(f"\033[31m✖ Ошибка при скачивании {url}:\033[0m {e}", file=sys.stderr)
+                if "503" in str(e):
+                    print(
+                        "\033[33mПодсказка: HTTP 503 — YouTube временно ограничил этот IP/поток.\n"
+                        "  1) Обновите yt-dlp:  pip install -U yt-dlp\n"
+                        "  2) Подождите несколько минут и повторите попытку;\n"
+                        "  3) Попробуйте другое качество:  -q 720p (или -q 480p);\n"
+                        "  4) Смените сеть (например, мобильный интернет/VPN);\n"
+                        "  5) Если не помогает — добавьте --cookies-from-browser chrome\033[0m",
+                        file=sys.stderr,
+                    )
                 failed.append(url)
 
     if failed:
@@ -245,7 +265,11 @@ def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
 
     if args.list_formats:
-        list_formats(args.urls[0], build_ydl_opts(args))
+        try:
+            list_formats(args.urls[0], build_ydl_opts(args))
+        except yt_dlp.utils.DownloadError as e:
+            print(f"\033[31m✖ Не удалось получить список форматов:\033[0m {e}", file=sys.stderr)
+            return 1
         return 0
 
     return download(args.urls, args)
