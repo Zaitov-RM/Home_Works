@@ -1,145 +1,128 @@
 #!/usr/bin/env python3
-"""Самый простой терминальный проигрыватель музыки.
+# -*- coding: utf-8 -*-
+"""
+Самый простой терминальный проигрыватель музыки.
+Работает на Windows, Linux и macOS.
 
-Использование:
-    python3 player.py [папка_с_музыкой]
+Использование (Windows):
+    python player.py C:\\Users\\Graviton\\Music
 
 Управление:
-    Enter  - играть / пауза (продолжить)
-    n      - следующий трек
-    p      - предыдущий трек
-    q      - выход
+    Enter  - следующий трек / начать воспроизведение
+    q      - выход (или Ctrl+C)
+
+Воспроизведение в Windows делегируется PowerShell (MediaPlayer),
+в Linux/macOS - ffplay или mpg123.
 """
 
 import os
 import sys
 import time
 import shutil
-import signal
-import termios
-import tty
-from subprocess import Popen, DEVNULL
+import subprocess
 
-EXTENSIONS = (".mp3", ".ogg", ".wav", ".flac", ".m4a", ".aac", ".opus", ".wma")
+AUDIO_EXTS = {".mp3", ".wav", ".flac", ".ogg", ".m4a", ".aac", ".opus", ".wma"}
 
 
-def find_player():
-    """Ищем доступный консольный плеер (ffplay из ffmpeg или mpg123)."""
-    for name in ("ffplay", "mpg123"):
-        path = shutil.which(name)
-        if path:
-            return path
-    sys.exit("Не найден плеер. Установите ffmpeg или mpg123.")
+def find_tracks(path):
+    """Собирает список аудиофайлов из файла или папки."""
+    if os.path.isfile(path):
+        return [path]
+    tracks = []
+    for root, _dirs, files in os.walk(path):
+        for f in sorted(files):
+            if os.path.splitext(f)[1].lower() in AUDIO_EXTS:
+                tracks.append(os.path.join(root, f))
+    return tracks
 
 
-def read_key():
-    """Читает одну нажатую клавишу без Enter (сигнал 't' - трек закончился)."""
-    if not sys.stdin.isatty():  # запуск не из терминала (pipe) - просто ждём
-        time.sleep(0.2)
-        return "t"
-    fd = sys.stdin.fileno()
-    old = termios.tcgetattr(fd)
+def play_windows(track):
+    """Проигрывает трек через PowerShell (System.Windows.Media)."""
+    ps = (
+        "Add-Type -AssemblyName presentationCore; "
+        "$p = New-Object System.Windows.Media.MediaPlayer; "
+        "$p.Open([uri]'{}'); $p.Play(); "
+        "while ($p.NaturalDuration.HasTimeSpan -and "
+        "$p.Position -lt $p.NaturalDuration.TimeSpan) {{ Start-Sleep -m 200 }}".format(
+            track.replace("'", "''")
+        )
+    )
+    proc = subprocess.Popen(
+        ["powershell", "-NoProfile", "-Command", ps],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
     try:
-        tty.setraw(fd)
-        return sys.stdin.read(1)
-    finally:
-        termios.tcsetattr(fd, termios.TCSADRAIN, old)
+        while proc.poll() is None:
+            time.sleep(0.2)
+    except KeyboardInterrupt:
+        proc.terminate()
+        raise
+    return proc.returncode or 0
 
 
-class Player:
-    def __init__(self, playlist, player_bin):
-        self.playlist = playlist
-        self.player_bin = player_bin
-        self.index = 0
-        self.proc = None
-        self.paused = False
+def play_unix(track, players):
+    """Проигрывает трек через консольный плеер (ffplay/mpg123/afplay)."""
+    name, args = players
+    cmd = [name] + args + [track]
+    proc = subprocess.Popen(cmd)
+    try:
+        proc.wait()
+    except KeyboardInterrupt:
+        proc.terminate()
+        raise
+    return proc.returncode or 0
 
-    @property
-    def track(self):
-        return self.playlist[self.index]
 
-    def play(self):
-        self.stop()
-        if os.path.basename(self.player_bin) == "ffplay":
-            cmd = [self.player_bin, "-nodisp", "-autoexit", "-loglevel", "quiet", self.track]
-        else:  # mpg123 умеет только mp3
-            cmd = [self.player_bin, "-q", self.track]
-        self.proc = Popen(cmd, stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
-        self.paused = False
-
-    def stop(self):
-        if self.proc and self.proc.poll() is None:
-            self.proc.terminate()
-            try:
-                self.proc.wait(timeout=2)
-            except Exception:
-                self.proc.kill()
-        self.proc = None
-
-    def pause(self):
-        """Приостановка/продолжение через сигналы SIGSTOP/SIGCONT."""
-        if not self.proc or self.proc.poll() is not None:
-            return
-        sig = signal.SIGCONT if self.paused else signal.SIGSTOP
-        os.kill(self.proc.pid, sig)
-        self.paused = not self.paused
-
-    def next(self):
-        self.index = (self.index + 1) % len(self.playlist)
-        self.play()
-
-    def prev(self):
-        self.index = (self.index - 1) % len(self.playlist)
-        self.play()
-
-    def running(self):
-        return self.proc is not None and self.proc.poll() is None
+def find_unix_players():
+    candidates = [
+        ("ffplay", ["-nodisp", "-autoexit", "-loglevel", "quiet"]),
+        ("mpg123", ["-q"]),
+        ("afplay", []),       # macOS
+    ]
+    for name, args in candidates:
+        if shutil.which(name):
+            return (name, args)
+    return None
 
 
 def main():
-    folder = sys.argv[1] if len(sys.argv) > 1 else "."
-    if os.path.isfile(folder):
-        playlist = [folder]
+    if len(sys.argv) > 1:
+        src = sys.argv[1]
     else:
-        playlist = sorted(
-            os.path.join(root, f)
-            for root, _, files in os.walk(folder)
-            for f in files
-            if f.lower().endswith(EXTENSIONS)
-        )
-    if not playlist:
-        sys.exit(f"В папке '{folder}' не найдено аудиофайлов.")
+        src = os.getcwd()
 
-    player_bin = find_player()
-    pl = Player(playlist, player_bin)
-    pl.play()
+    tracks = find_tracks(src)
+    if not tracks:
+        print("Не нашёл аудиофайлов в:", src)
+        print("Поддерживаемые форматы:", ", ".join(sorted(AUDIO_EXTS)))
+        return 1
 
-    print(f"Плеер: {os.path.basename(player_bin)} | Треков: {len(playlist)}")
-    print("Enter - играть/пауза, n - следующий, p - предыдущий, q - выход\n")
+    is_windows = os.name == "nt"
+    players = None
+    if not is_windows:
+        players = find_unix_players()
+        if not players:
+            print("Не найден плеер. Установите ffmpeg или mpg123:")
+            print("  Debian/Ubuntu: sudo apt install ffmpeg")
+            return 1
+
+    print("Найдено треков: {}".format(len(tracks)))
+    print("Enter - следующий трек, q - выход\n")
 
     try:
-        while True:
-            if not pl.running() and not pl.paused:
-                pl.next()  # трек закончился -> играем следующий
-            print(f"\r▶ {pl.track}{'   ' if not pl.paused else ' [II]'}", end=" ", flush=True)
-            key = read_key()
-            if key in ("q", "\x03"):  # q или Ctrl+C
-                break
-            elif key in ("\r", "\n", " "):
-                if pl.running():
-                    pl.pause()
-                else:
-                    pl.play()
-            elif key == "n":
-                pl.next()
-            elif key == "p":
-                pl.prev()
-            # key == "t" - трек ещё играет, просто обновили строку статуса
-            time.sleep(0.05)
-    finally:
-        pl.stop()
-        print("\nПока!")
+        for i, track in enumerate(tracks, 1):
+            print("[{}/{}] {}".format(i, len(tracks), os.path.basename(track)))
+            if is_windows:
+                play_windows(track)
+            else:
+                play_unix(track, players)
+    except KeyboardInterrupt:
+        pass
+
+    print("\nГотово.")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
